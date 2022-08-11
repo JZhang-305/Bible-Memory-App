@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<h1>{{ verse }}</h1>
+
+<form action="{% url 'score' %}">
+
+    {% for tuple in full %}
+        <select name={{ tuple.1 }}>
+
+            {% for random in full %}
+
+                <option value="{{ random.0 }}">{{ random.0 }}</option>
+
+
+            {% endfor %}
+                </select>
+
+    {% endfor %}
+    <input type='submit' value = 'View Score' class="btn btn-warning">
+</form>
